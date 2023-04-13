@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div th:each="product: ${products}">
+    <div th:if="${product.image}">
+        <img th:src="@{|/images/${product.image}|}">
+    </div>
+    <div th:unless="${product.image}">
+        <img src="/images/not_available.jpg">
+    </div>
+</div>
+</body>
+</html>
